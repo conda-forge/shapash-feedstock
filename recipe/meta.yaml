@@ -1,5 +1,5 @@
 {% set name = "shapash" %}
-{% set version = "2.2.1" %}
+{% set version = "2.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/shapash-{{ version }}.tar.gz
-  sha256: 6d862eb896313e34694826450ef9a546360727ae16227d6d3260cc8fa0372b77
+  sha256: 64548c14ffbfea76ca00297b2706946b7825e74f350ba96ffaec8c827f88789a
 
 build:
   noarch: python
@@ -39,7 +39,7 @@ requirements:
     - nbformat >4.2.0
     - numba >=0.53.1
     - scikit-learn >=0.24.0,<1.2.0
-    - category_encoders >=2.2.2
+    - category_encoders >=2.2.2,<2.6.0
     - scipy >=0.19.1
     - xorg-libx11
 
