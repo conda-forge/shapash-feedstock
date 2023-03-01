@@ -1,11 +1,11 @@
-About shapash
-=============
+About shapash-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/shapash-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/MAIF/shapash
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/shapash-feedstock/blob/main/LICENSE.txt)
 
 Summary: Shapash is a Python library which aims to make machine learning interpretable and understandable by everyone.
 
