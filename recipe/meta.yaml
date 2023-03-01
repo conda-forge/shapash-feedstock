@@ -1,5 +1,5 @@
 {% set name = "shapash" %}
-{% set version = "2.2.2" %}
+{% set version = "2.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/shapash-{{ version }}.tar.gz
-  sha256: 64548c14ffbfea76ca00297b2706946b7825e74f350ba96ffaec8c827f88789a
+  sha256: 87396f364d0ebe514fb539225e91134cc5052e36bc6498749132816fcd817f81
 
 build:
   noarch: python
