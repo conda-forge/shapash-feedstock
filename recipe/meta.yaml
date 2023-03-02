@@ -1,5 +1,5 @@
 {% set name = "shapash" %}
-{% set version = "2.2.2" %}
+{% set version = "2.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/shapash-{{ version }}.tar.gz
-  sha256: 64548c14ffbfea76ca00297b2706946b7825e74f350ba96ffaec8c827f88789a
+  sha256: 87396f364d0ebe514fb539225e91134cc5052e36bc6498749132816fcd817f81
 
 build:
   noarch: python
@@ -38,14 +38,15 @@ requirements:
     - dash-table >=5.0.0
     - nbformat >4.2.0
     - numba >=0.53.1
-    - scikit-learn >=0.24.0,<1.2.0
-    - category_encoders >=2.2.2,<2.6.0
+    - scikit-learn >=1.0.1
+    - category_encoders >=2.6.0
     - scipy >=0.19.1
     - xorg-libx11
 
     - ipython
     - nbconvert >=6.0.7
     - papermill >=2.0.0
+    - jupyter_client <8.0.0
     - seaborn >=0.11.0
     - notebook
     - jinja2 >=2.11.0
