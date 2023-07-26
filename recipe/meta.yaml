@@ -1,5 +1,5 @@
 {% set name = "shapash" %}
-{% set version = "2.3.4" %}
+{% set version = "2.3.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/shapash-{{ version }}.tar.gz
-  sha256: 82590d1ea8351ee55129aa268edecefef8dd260186b7a2842c3d96f2cc2a485c
+  sha256: 8a76a11e30f7739eb27fe366f4ef76587cc7b9ae24422706a9e392e44186059b
 
 build:
   noarch: python
@@ -20,14 +20,14 @@ requirements:
     - pytest-runner
     - pip
     - nodejs
-    - tk
-    - xorg-libx11
+    - tk  # legacy?
+    - xorg-libx11   # legacy?
   run:
     - python >=3.7,<3.11
     - plotly >=5.0.0
     - matplotlib-base >=3.2.0
-    - numpy >1.18.0,<1.24.0
-    - pandas >1.0.2,<2.0.0
+    - numpy >1.18.0
+    - pandas >1.0.2
     - shap >=0.38.1
     - flask <2.3.0
     - dash >=2.3.1
@@ -42,8 +42,8 @@ requirements:
     - scikit-learn >=1.0.1
     - category_encoders >=2.6.0
     - scipy >=0.19.1
-    - xorg-libx11
-
+    - xorg-libx11  # legacy?
+# This list should be identical to the list in shapash/report/__init__.py
     - ipython
     - nbconvert >=6.0.7
     - papermill >=2.0.0
@@ -52,6 +52,15 @@ requirements:
     - notebook
     - jinja2 >=2.11.0
     - phik
+# pip check failure- dash 2.11.1 has requirement Werkzeug<2.3.0, but you have werkzeug 2.3.6.
+    - Werkzeug <2.3.0
+# extras_require=extras,
+  run_constrained:
+    - xgboost >=1.0.0
+    - lightgbm >=2.3.0
+    - catboost >=1.0.1
+    #- acv-exp >=1.2.0
+    - lime >=0.2.0.0
 
 test:
   imports:
