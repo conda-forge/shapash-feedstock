@@ -49,6 +49,8 @@ requirements:
     - notebook
     - jinja2 >=2.11.0
     - phik
+# pip check failure- dash 2.11.1 has requirement Werkzeug<2.3.0, but you have werkzeug 2.3.6.
+    - Werkzeug <2.3.0
 # extras_require=extras,
   run_constrained:
     - xgboost >=1.0.0
