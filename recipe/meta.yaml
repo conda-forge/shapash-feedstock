@@ -16,14 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.7,<3.11
+    - python >=3.8,<3.11
     - pytest-runner
     - pip
     - nodejs
-    - tk  # legacy?
-    - xorg-libx11   # legacy?
   run:
-    - python >=3.7,<3.11
+    - python >=3.8,<3.11
     - plotly >=5.0.0
     - matplotlib-base >=3.2.0
     - numpy >1.18.0
@@ -42,18 +40,15 @@ requirements:
     - scikit-learn >=1.0.1
     - category_encoders >=2.6.0
     - scipy >=0.19.1
-    - xorg-libx11  # legacy?
 # This list should be identical to the list in shapash/report/__init__.py
     - ipython
     - nbconvert >=6.0.7
     - papermill >=2.0.0
-    - jupyter_client <8.0.0
+    - jupyter_client >=7.4.0
     - seaborn >=0.12.2
     - notebook
     - jinja2 >=2.11.0
     - phik
-# pip check failure- dash 2.11.1 has requirement Werkzeug<2.3.0, but you have werkzeug 2.3.6.
-    - Werkzeug <2.3.0
 # extras_require=extras,
   run_constrained:
     - xgboost >=1.0.0
