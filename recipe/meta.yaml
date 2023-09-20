@@ -1,5 +1,5 @@
 {% set name = "shapash" %}
-{% set version = "2.3.6" %}
+{% set version = "2.3.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/shapash-{{ version }}.tar.gz
-  sha256: 33d634069918e95324fbadd3237fe5068864b81c6e2d0c36733422343a3a34e5
+  sha256: 2d0b7921cbb678cc318e21aa122022bd6d61dbeeccff769c61ca23cf73e79fe5
 
 build:
   noarch: python
@@ -16,14 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.7,<3.11
+    - python >=3.8,<3.11
     - pytest-runner
     - pip
     - nodejs
-    - tk  # legacy?
-    - xorg-libx11   # legacy?
   run:
-    - python >=3.7,<3.11
+    - python >=3.8,<3.11
     - plotly >=5.0.0
     - matplotlib-base >=3.2.0
     - numpy >1.18.0
@@ -42,12 +40,11 @@ requirements:
     - scikit-learn >=1.0.1
     - category_encoders >=2.6.0
     - scipy >=0.19.1
-    - xorg-libx11  # legacy?
 # This list should be identical to the list in shapash/report/__init__.py
     - ipython
     - nbconvert >=6.0.7
     - papermill >=2.0.0
-    - jupyter_client <8.0.0
+    - jupyter_client >=7.4.0
     - seaborn >=0.12.2
     - notebook
     - jinja2 >=2.11.0
