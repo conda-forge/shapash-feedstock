@@ -8,5 +8,3 @@ docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 nodejs:
 - '16'
-tk:
-- '8.6'
