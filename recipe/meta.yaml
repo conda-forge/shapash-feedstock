@@ -11,17 +11,16 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python >=3.8,<3.11
+    - python >=3.8,<3.12
     - pytest-runner
     - pip
-    - nodejs
   run:
-    - python >=3.8,<3.11
+    - python >=3.8,<3.12
     - plotly >=5.0.0
     - matplotlib-base >=3.2.0
     - numpy >1.18.0
@@ -37,7 +36,7 @@ requirements:
     - dash-table >=5.0.0
     - nbformat >4.2.0
     - numba >=0.53.1
-    - scikit-learn >=1.0.1
+    - scikit-learn >=1.0.1,<1.4
     - category_encoders >=2.6.0
     - scipy >=0.19.1
 # This list should be identical to the list in shapash/report/__init__.py
