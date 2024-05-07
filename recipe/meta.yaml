@@ -1,5 +1,5 @@
 {% set name = "shapash" %}
-{% set version = "2.4.3" %}
+{% set version = "2.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/shapash-{{ version }}.tar.gz
-  sha256: 6ba9119fcca31700d1096a3fd06ff51d81b5a17d932d539b0afc788f44b5affd
+  sha256: ed512e919d3ab1eba521b43c70c35e3dbdf360f1040f812a2a8dd135bdfa71ba
 
 build:
   noarch: python
@@ -36,7 +36,7 @@ requirements:
     - dash-table >=5.0.0
     - nbformat >4.2.0
     - numba >=0.53.1
-    - scikit-learn >=1.0.1,<1.4
+    - scikit-learn >=1.4.0
     - category_encoders >=2.6.0
     - scipy >=0.19.1
 # This list should be identical to the list in shapash/report/__init__.py
