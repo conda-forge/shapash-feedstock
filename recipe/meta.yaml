@@ -1,13 +1,13 @@
 {% set name = "shapash" %}
-{% set version = "2.7.4" %}
+{% set version = "2.7.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/shapash-{{ version }}.tar.gz
-  sha256: 14305b013fe1df175f200303ada2f647490848a46dce46cf9c0ff86f1d384b89
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/shapash-{{ version }}.tar.gz
+  sha256: fae42a4077a060548f0eb5a38b0263dd26495315d91a3bb2c4cd55e7ec2fc11d
 
 build:
   noarch: python
@@ -16,17 +16,21 @@ build:
 
 requirements:
   host:
-    - python >=3.8,<3.12
+    #- python {{ python_min }},<3.13
+    - python >=3.9,<3.13
     - pytest-runner
     - pip
+    - setuptools
+    - wheel
   run:
-    - python >=3.8,<3.12
+    #- python >={{ python_min }},<3.13
+    - python >=3.9,<3.13
     - plotly >=5.0.0
     - matplotlib-base >=3.2.0
-    - numpy >1.18.0
-    - pandas >1.0.2
-    - shap >=0.38.1
-    - flask <2.3.0
+    - numpy >1.18.0,<2
+    - pandas >=2.1.0
+    - shap >=0.45.0
+    - flask >=1.0.4
     - dash >=2.3.1
     - dash-bootstrap-components >=1.1.0
     - dash-core-components >=2.0.0
@@ -65,6 +69,7 @@ test:
     - pip check
   requires:
     - pip
+    #- python {{ python_min }},<3.13
 
 about:
   home: https://github.com/MAIF/shapash

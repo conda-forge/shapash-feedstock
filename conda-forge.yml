@@ -6,3 +6,6 @@ conda_build:
   pkg_format: '2'
 bot:
   automerge: true
+  inspection: hint-all
+  check_solvable: true
+  run_deps_from_wheel: true
