@@ -12,19 +12,17 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    #- python {{ python_min }},<3.13
-    - python >=3.9,<3.13
+    - python {{ python_min }}
     - pytest-runner
     - pip
     - setuptools
     - wheel
   run:
-    #- python >={{ python_min }},<3.13
-    - python >=3.9,<3.13
+    - python >={{ python_min }},<3.13
     - plotly >=5.0.0
     - matplotlib-base >=3.2.0
     - numpy <2,>1.18.0
@@ -43,7 +41,7 @@ requirements:
     - scikit-learn <1.6.0,>=1.4.0
     - category_encoders >=2.6.0
     - scipy >=0.19.1
-# This list should be identical to the list in shapash/report/__init__.py
+    # This list should be identical to the list in shapash/report/__init__.py
     - ipython
     - nbconvert >=6.0.7
     - papermill >=2.0.0
@@ -52,9 +50,9 @@ requirements:
     - notebook 
     - jinja2 >=2.11.0
     - phik 
-# pip check failure- dash 2.11.1 has requirement Werkzeug<2.3.0, but you have werkzeug 2.3.6.
+    # pip check failure- dash 2.11.1 has requirement Werkzeug<2.3.0, but you have werkzeug 2.3.6.
     - Werkzeug <2.3.0
-# extras_require=extras,
+    # extras_require=extras,
     # - xgboost >=1.0.0
     # - sphinxcontrib-serializinghtml ==1.1.5
     # - sphinxcontrib-qthelp ==1.0.3
@@ -90,7 +88,7 @@ test:
     - pip check
   requires:
     - pip
-    #- python {{ python_min }},<3.13
+    - python {{ python_min }}
 
 about:
   home: https://github.com/MAIF/shapash
