@@ -1,5 +1,5 @@
 {% set name = "shapash" %}
-{% set version = "2.7.6" %}
+{% set version = "2.7.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/shapash-{{ version }}.tar.gz
-  sha256: 8f80179e4c2962dac0420086d07f80c06e8c0d1104b126842d0e943d41db3111
+  sha256: c0408442278437ff81f43325f2481fd5ae862d1ab60f9d2b57d3c4df747028c9
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -23,7 +23,7 @@ requirements:
     - wheel
   run:
     - python >={{ python_min }},<3.13
-    - plotly >=5.0.0
+    - plotly <6.0.0,>=5.0.0
     - matplotlib-base >=3.2.0
     - numpy <2,>1.18.0
     - pandas >=2.1.0
@@ -53,6 +53,27 @@ requirements:
     # pip check failure- dash 2.11.1 has requirement Werkzeug<2.3.0, but you have werkzeug 2.3.6.
     - Werkzeug <2.3.0
     # extras_require=extras,
+    # - xgboost >=1.0.0
+    # - sphinxcontrib-serializinghtml ==1.1.5
+    # - sphinxcontrib-qthelp ==1.0.3
+    # - sphinxcontrib-jsmath ==1.0.1
+    # - sphinxcontrib-htmlhelp ==2.0.0
+    # - sphinxcontrib-devhelp ==1.0.2
+    # - sphinxcontrib-applehelp ==1.0.2
+    # - sphinx_material ==0.0.35
+    # - shapash 
+    # - ruff 
+    # - pytest-cov 
+    # - pytest 
+    # - pre-commit 
+    # - nbsphinx ==0.8.8
+    # - mypy 
+    # - lime >=0.2.0.0
+    # - lightgbm >=2.3.0
+    # - catboost >=1.0.1
+    # - Sphinx ==4.5.0
+    # - Jinja2 >=2.11.0
+    # - Flask >=1.0.4
     # - xgboost >=1.0.0
     # - sphinxcontrib-serializinghtml ==1.1.5
     # - sphinxcontrib-qthelp ==1.0.3
