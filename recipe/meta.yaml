@@ -1,5 +1,5 @@
 {% set name = "shapash" %}
-{% set version = "2.7.8" %}
+{% set version = "2.7.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/shapash-{{ version }}.tar.gz
-  sha256: 2338544b7f272ab7475a448778417e77bcd8950d4131a2a41139f5c6d9b62031
+  sha256: 85d91bcd313c2540e732b7838486b58673395155f0c1fd45da3b3f9c4d0bb653
 
 build:
   noarch: python
@@ -53,6 +53,27 @@ requirements:
     # pip check failure- dash 2.11.1 has requirement Werkzeug<2.3.0, but you have werkzeug 2.3.6.
     - Werkzeug <2.3.0
     # extras_require=extras,
+    # - xgboost >=1.0.0
+    # - sphinxcontrib-serializinghtml ==1.1.5
+    # - sphinxcontrib-qthelp ==1.0.3
+    # - sphinxcontrib-jsmath ==1.0.1
+    # - sphinxcontrib-htmlhelp ==2.0.0
+    # - sphinxcontrib-devhelp ==1.0.2
+    # - sphinxcontrib-applehelp ==1.0.2
+    # - sphinx_material ==0.0.35
+    # - shapash 
+    # - ruff 
+    # - pytest-cov 
+    # - pytest 
+    # - pre-commit 
+    # - nbsphinx ==0.8.8
+    # - mypy 
+    # - lime >=0.2.0.0
+    # - lightgbm >=2.3.0
+    # - catboost >=1.0.1
+    # - Sphinx ==4.5.0
+    # - Jinja2 >=2.11.0
+    # - Flask >=1.0.4
     # - xgboost >=1.0.0
     # - sphinxcontrib-serializinghtml ==1.1.5
     # - sphinxcontrib-qthelp ==1.0.3
