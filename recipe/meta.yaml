@@ -1,5 +1,5 @@
 {% set name = "shapash" %}
-{% set version = "2.8.0" %}
+{% set version = "2.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/shapash-{{ version }}.tar.gz
-  sha256: 46582c1642fca8452fa34755ecd8e8c0014f00c4c829f8bbb52dfa1ed1186086
+  sha256: 560999a1c329ad38fe2abd39ac12cf8896048eb67f2a27aa900fd69d4528604d
 
 build:
   noarch: python
@@ -24,21 +24,21 @@ requirements:
   run:
     - python >={{ python_min }},<3.14
     - category_encoders >=2.6.0
-    - dash-bootstrap-components >=1.1.0,<2.0.0
+    - dash-bootstrap-components >=1.1.0
     - dash-core-components >=2.0.0
     - dash-daq >=0.5.0
     - dash-html-components >=2.0.0
     - dash-renderer ==1.8.3
     - dash-table >=5.0.0
-    - dash >=2.3.1,<3.0.0
+    - dash <3.0.0,>=2.3.1
     - flask >=1.0.4
     - matplotlib-base >=3.8.4
     - nbformat >5.8.0
     - numba >=0.60.0
     - numpy >=2.0.0
-    - pandas >=2.2.2
-    - plotly >=5.0.0,<6.0.0
-    - scikit-learn >=1.4.2,<1.6.0
+    - pandas <3.0.0,>=2.2.2
+    - plotly <6.0.0,>=5.0.0
+    - scikit-learn <1.6.0,>=1.4.2
     - scipy >=1.13.0
     - shap >=0.46.0
     - shapely >=2.0.0
@@ -52,7 +52,29 @@ requirements:
     - jinja2 >=3.1.0
     - phik >=0.12.4
     - pyarrow >=17.0.0
-    
+    # - xgboost <3.1.0,>=2.1.0
+    # - sphinxcontrib-serializinghtml ==1.1.5
+    # - sphinxcontrib-qthelp ==1.0.3
+    # - sphinxcontrib-jsmath ==1.0.1
+    # - sphinxcontrib-htmlhelp ==2.0.0
+    # - sphinxcontrib-devhelp ==1.0.2
+    # - sphinxcontrib-applehelp ==1.0.2
+    # - sphinx_material ==0.0.35
+    # - shapash 
+    # - ruff 
+    # - pytest-cov 
+    # - pytest 
+    # - pre-commit 
+    # - nbsphinx ==0.8.8
+    # - mypy 
+    # - lime >=0.2.0.0
+    # - lightgbm >=4.4.0
+    # - jupyter-client >=8.3.0
+    # - catboost >=1.2.8
+    # - Sphinx ==4.5.0
+    # - Jinja2 >=3.1.0
+    # - Flask >=1.0.4
+
     # pip check failure- dash 2.11.1 has requirement Werkzeug<2.3.0, but you have werkzeug 2.3.6.
     #- Werkzeug <2.3.0
     # extras_require=extras,
