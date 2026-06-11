@@ -1,0 +1,82 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: "2.9.0"
+  python_min: "3.11"
+
+package:
+  name: shapash
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/s/shapash/shapash-${{ version }}.tar.gz
+  sha256: 4e299980650b845fd33ea3a7786cc11547baf74811b52f916212ad9c75e5396f
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools
+    - wheel
+    - pip
+  run:
+    - python >=${{ python_min }},<3.15
+    - category_encoders >=2.6.0
+    - dash-bootstrap-components >=1.1.0,<2.0.0 # Note <2.0.0 added for conda-forge resolution
+    # Import Error without dash-bootstrap-components >=1.1.0 ,<2.0.0 - dash-bootstrap-components 2.0.3 has requirement dash>=3.0.4, but you have dash 2.18.2.
+    - dash-core-components >=2.0.0
+    - dash-daq >=0.5.0
+    - dash-html-components >=2.0.0
+    - dash-renderer ==1.8.3
+    - dash-table >=5.0.0
+    - dash >=2.3.1 ,<3.0.0
+    - flask >=1.0.4
+    - matplotlib-base >=3.8.4
+    - nbformat >5.8.0
+    - numba >=0.60.0
+    - numpy >=2.0.0,<2.6.0
+    - pandas >=2.2.2,<4.0.0
+    - plotly >=5.0.0,<6.0.0
+    - scikit-learn >=1.8.0,<1.9.0
+    - scipy >=1.13.0
+    - shap >=0.46.0
+    - shapely >=2.0.0
+  run_constraints:
+    # https://github.com/MAIF/shapash/blob/v2.9.0/pyproject.toml#L54
+    - jinja2 >=3.1.0
+    - jupyter_client >=8.3.0  # Note jupyter-client on pypi is jupyter_client on conda-forge
+    - nbconvert >=7.2.0
+    - notebook >=7.0.0
+    - papermill >=2.5.0
+    - phik >=0.12.4
+    - pyarrow >=17.0.0
+    # https://github.com/MAIF/shapash/blob/v2.9.0/pyproject.toml#L64
+    - xgboost >=2.1.0
+    - catboost >=1.2.8
+    - lightgbm >=4.4.0
+    - lime >=0.2.0.0
+
+tests:
+  - python:
+      imports:
+        - shapash
+
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: Shapash is a Python library which aims to make machine learning interpretable and understandable by everyone.
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/MAIF/shapash
+
+extra:
+  recipe-maintainers:
+    - rxm7706
